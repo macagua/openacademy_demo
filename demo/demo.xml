@@ -1,8 +1,24 @@
 <openerp>
     <data>
         <!--  -->
-        <!--   <record id="object0" model="openacademy.openacademy"> -->
-        <!--     <field name="name">Object 0</field> -->
+            <record id="course0" model="openacademy.course">
+                <field name="name">Course 0</field>
+                <field name="description">Course 0's description
+
+Can have multiple lines</field>
+            </record>
+            <record id="course1" model="openacademy.course">
+                <field name="name">Course 1</field>
+                <field name="description">Course 1's description
+
+Can have multiple lines</field>
+            </record>
+            <record id="course2" model="openacademy.course">
+                <field name="name">Course 2</field>
+                <field name="description">Course 2's description
+
+Can have multiple lines</field>
+            </record>
         <!--     <field name="value">0</field> -->
         <!--   </record> -->
         <!--  -->
