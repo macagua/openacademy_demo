@@ -26,6 +26,7 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
+        'views/openacademy.xml',
         'views/views.xml',
         'views/templates.xml',
     ],
