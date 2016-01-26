@@ -15,7 +15,7 @@
     </record>
     -->
 
-    <!-- Course Form View -->
+    <!-- Course form view - default -->
     <record model="ir.ui.view" id="course_form_view">
       <field name="name">course.form</field>
       <field name="model">openacademy.course</field>
@@ -38,7 +38,7 @@
       </field>
     </record>
 
-    <!-- Course Form Search View -->
+    <!-- Course form view - search -->
     <record model="ir.ui.view" id="course_search_view">
       <field name="name">course.search</field>
       <field name="model">openacademy.course</field>
@@ -47,6 +47,24 @@
           <field name="name"/>
           <field name="description"/>
         </search>
+      </field>
+    </record>
+
+    <!-- Session form view - default -->
+    <record model="ir.ui.view" id="session_form_view">
+      <field name="name">session.form</field>
+      <field name="model">openacademy.session</field>
+      <field name="arch" type="xml">
+        <form string="Session Form">
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="start_date"/>
+              <field name="duration"/>
+              <field name="seats"/>
+            </group>
+          </sheet>
+        </form>
       </field>
     </record>
 
@@ -61,7 +79,17 @@
         <p class="oe_view_nocontent_create">Create the first course.
         </p>
       </field>
+    </record>
 
+    <record model="ir.actions.act_window" id="session_list_action">
+      <field name="name">Sessions</field>
+      <field name="res_model">openacademy.session</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">Create the first session.
+        </p>
+      </field>
     </record>
 
 
@@ -92,9 +120,14 @@
     <!-- actions -->
     <!-- the following menuitem should appear *after*
          its parent openacademy_menu and *after* its
-         action course_list_action -->    
+         action course_list_action -->
     <menuitem name="Courses" id="courses_menu" parent="openacademy_menu"
               action="course_list_action"/>
+    <!-- the following menuitem should appear *after*
+         its parent openacademy_menu and *after* its
+         action session_list_action -->
+    <menuitem name="Sessions" id="session_menu" parent="openacademy_menu"
+              action="session_list_action"/>
     <!--
     <menuitem name="Server to list" id="openacademy" parent="openacademy.menu_2"
               action="openacademy.action_server"/>
