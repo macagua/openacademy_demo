@@ -114,6 +114,18 @@
       </field>
     </record>
 
+    <!-- session calendar view -->
+    <record model="ir.ui.view" id="session_calendar_view">
+      <field name="name">session.calendar</field>
+      <field name="model">openacademy.session</field>
+      <field name="arch" type="xml">
+        <calendar string="Session Calendar" date_start="start_date"
+          date_stop="end_date" color="instructor_id">
+          <field name="name"/>
+        </calendar>
+      </field>
+    </record>
+
 
     <!-- actions opening views on models -->
 
@@ -132,7 +144,7 @@
       <field name="name">Sessions</field>
       <field name="res_model">openacademy.session</field>
       <field name="view_type">form</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree,form,calendar</field>
       <field name="help" type="html">
         <p class="oe_view_nocontent_create">Create the first session.
         </p>
